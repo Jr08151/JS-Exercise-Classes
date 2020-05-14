@@ -139,19 +139,22 @@ class Lambdasian {
         + `grade` receives a `student` object and a `subject` string as arguments and returns '{student.name} receives a perfect score on {subject}'
 */
 class Instructor {
-  constructor(obj){
-    super(obj)
-    this.specialty = obj.specialty;
-    this.favLanguage = obj.favLanguage;
-    this.catchPhrase = obj.catchPhrase;
-  }
-  demo(subject){
-    return `Today we are learning about ${subject}`;
-  }
-  grade(student, subject){
-    
-    return `${student.name} receives a perfect score on ${subject}`;
-  }
+  constructor ({name, age, location, specialty, favLanguage, catchPhrase}){ 
+    super({name, age, location});
+   this.age = age;
+   this.name = name;
+   this.location = location;
+   this.specialty = specialty;
+   this.favLanguage = favLanguage;
+   this.catchPhrase = catchPhrase;
+   }
+   demo(subject){
+     return (`'Today we are learning about ${subject}'`)
+   }
+   grade(student, subject){
+     return (`'${student.name} receives a perfect score on ${subject}'`)
+   }
+ }
 
 }
 
@@ -171,20 +174,24 @@ class Instructor {
         + `sprintChallenge` similar to PRAssignment but returns `student.name has begun sprint challenge on {subject}`
 */
 class Student {
-  constructor(obj){
-    super(obj)
-    this.previousBackground = obj.previousBackground;
-    this.className = obj.className;
-    this.favSubjects = obj.favSubjects;
+  constructor({name, age, location,previousBackground, className, favSubjects }){ 
+    super({name, age, location})
+    this.age = age;
+    this.name = name;
+    this.location = location;
+    this.previousBackground = previousBackground;
+    this.className = className;
+    this.favSubjects =favSubjects;
   }
   listSubjects(favSubjects){
-    return `Loving ${this.favSubjects}`;
+    return (`Loving ${this.favSubjects},!`)
   }
   PRAssignment(subject){
-    return `${this.name} has submitted a PR for ${subject}`;
+    return (`${this.name} has submitted a PR for ${subject}`);
   }
-  sprintChallenge(subject){
-    return `${this.name} has begun sprint challenge on ${subject}`;
+
+  sprintChallenge( subject){
+    return (`${this.name} has begun sprint challenge on ${subject}`)
   }
 }
 
@@ -202,19 +209,25 @@ class Student {
         + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
 */
 class ProjectManager {
-  constructor(obj){
-    super(obj)
-    this.gradClassName = obj.gradClassName;
-    this.favInstructor = obj.favInstructor;
+  constructor ({name, age, location, gradClassName, favInstructor, specialty, favLanguage, catchPhrase}){
+    super({name, age, location, favInstructor, gradClassName, specialty, favLanguage, catchPhrase});
+  this.age = age;
+  this.name = name;
+  this.location = location;
+  this.gradClassName = gradClassName;
+  this.favInstructor = favInstructor;
+  this.specialty = specialty;
+  this.favLanguage = favLanguage;
+  this.catchPhrase = catchPhrase;
   }
   standUp(channel){
-    return `${this.name} announces to ${channel}, @channel standy times!`;
+   return (`${this.name} announces to ${channel}, @channel standy times!`) 
+  
   }
-
-  debugsCode(student, subject){
-    return `${this.name} debugs ${student.name}'s code on ${subject}`;
+  debugsCode(student,subject){
+  return (`${this.name} debugs ${student.name}'s code on ${subject}`)
   }
-}
+  }
 
 /*
   STRETCH PROBLEM (no tests!)
